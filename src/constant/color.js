@@ -1,0 +1,1 @@
+export const defaultBgColor = "#0671d0"
