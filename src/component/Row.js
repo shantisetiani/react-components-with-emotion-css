@@ -1,17 +1,22 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-function Row(props) {
+export let vMargin;
+export let gutter;
+
+export function Row(props) {
     const Row = styled.div`
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        margin-right: -15px;
-        margin-left: -15px;
-        justify-content: ${props.align ? props.align : 'normal'}
+        justify-content: ${props.align ? props.align : 'normal'};
     `
+    
+    vMargin = props.vMargin
+    gutter = props.gutter
+
     return (
         <Row>
             {props.children}

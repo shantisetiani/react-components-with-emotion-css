@@ -1,8 +1,16 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { defaultBgColor } from '../constant/color'
+import {
+    primaryColor,
+    warningColor,
+    dangerColor,
+    defaultBgColor,
+    black, white
+} from '../constant/color'
 
 function Button(props) {
+    let bgColor, hoverColor, textColor;
+
     const padding = () => {
         switch(props.size) {
             case 'medium':
@@ -14,17 +22,40 @@ function Button(props) {
         }
     }
 
+    switch(props.type) {
+        case 'primary':
+            bgColor = primaryColor
+            textColor = white
+            break;
+        case 'warning':
+            bgColor = warningColor
+            textColor = black
+            break;
+        case 'danger':
+            bgColor = dangerColor
+            textColor = white
+            break;
+        default:
+            bgColor = defaultBgColor
+            textColor = black
+            break;
+    }
+
     const Button = styled.button`
-      padding: ${padding};
-      border: none;
-      border-radius: 4px;
-      background-color: ${props.bgColor ? props.bgColor : defaultBgColor};
-      color: ${props.textColor ? props.textColor : 'black'};
-      font-size: ${props.fontSize};
-      font-weight: bold;
-      &:hover {
-        color: white;
-      }
+        padding: ${padding};
+        border: none;
+        border-radius: 4px;
+        background-color: ${bgColor};
+        color: ${textColor};
+        font-size: ${props.fontSize};
+        font-weight: bold;
+        &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        &:active {
+            opacity: 0.5;
+        }
     `
 
     return (

@@ -1,9 +1,31 @@
-import { Row, Col, Button } from './component'
+import { Row, Col, Break, Button } from './component'
 
 function App() {
   return (
     <div className="App">
-      <Row>
+      <Break height={100} />
+      <Row gutter={12} vMargin={10}>
+        <Col>
+          <Button type="primary" label="Button" />
+        </Col>
+        <Col>
+          <Button type="warning" label="Button" />
+        </Col>
+        <Col>
+          <Button type="danger" label="Button" />
+        </Col>
+        <Col>
+          <Button label="Button" />
+        </Col>
+        <Col>
+          <Button label="Button" />
+        </Col>
+        <Col>
+          <Button label="Button" />
+        </Col>
+        <Col>
+          <Button label="Button" />
+        </Col>
         <Col>
           <Button label="Button" />
         </Col>
