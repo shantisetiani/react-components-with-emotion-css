@@ -1,4 +1,4 @@
-import { Row, Col, Break, Button } from './component'
+import { Row, Col, Break, Button, Checkbox } from './component'
 
 function App() {
   return (
@@ -6,6 +6,13 @@ function App() {
       <Break height={100} />
       <Row gutter={12} vMargin={10}>
         <Col>
+          <Checkbox content="Checkbox 1" />
+          <Checkbox content="Checkbox 2" />
+        </Col>
+        <Col></Col>
+      </Row>
+      <Row gutter={12} vMargin={10} totalCol={8}>
+        <Col colspan={1}>
           <Button type="primary" label="Button" />
         </Col>
         <Col>

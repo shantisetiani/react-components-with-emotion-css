@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-export let vMargin;
-export let gutter;
+export let vMargin, gutter, totalCol;
 
 export function Row(props) {
     const Row = styled.div`
@@ -16,6 +15,7 @@ export function Row(props) {
     
     vMargin = props.vMargin
     gutter = props.gutter
+    totalCol = props.totalCol ? props.totalCol : 6
 
     return (
         <Row>
